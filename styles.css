@@ -206,7 +206,7 @@ img {
 }
 
 /* ============================================
-   Hero
+   Hero — Split Layout with Photo
    ============================================ */
 
 .hero {
@@ -241,11 +241,94 @@ img {
   background: linear-gradient(180deg, transparent 60%, var(--bg-deep) 100%);
 }
 
-.hero-content {
+.hero-split {
   position: relative;
-  text-align: center;
-  padding: 120px 24px 80px;
-  max-width: 900px;
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  max-width: 1200px;
+  width: 100%;
+  padding: 120px 48px 80px;
+  z-index: 1;
+}
+
+/* ── Hero Photo ── */
+
+.hero-photo-col {
+  flex: 0 0 auto;
+  width: 380px;
+}
+
+.hero-photo-frame {
+  position: relative;
+}
+
+.hero-photo-wrapper {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  box-shadow:
+    0 32px 80px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(201, 169, 110, 0.1);
+}
+
+.hero-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  filter: grayscale(30%) contrast(1.05);
+  transition: filter 0.8s var(--ease), transform 1.2s var(--ease);
+}
+
+.hero-photo-wrapper:hover .hero-photo {
+  filter: grayscale(0%) contrast(1.02);
+  transform: scale(1.03);
+}
+
+.hero-photo-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, transparent 40%, rgba(3, 10, 20, 0.6) 100%),
+    linear-gradient(135deg, rgba(201, 169, 110, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Gold accent line — top-left corner */
+.hero-photo-accent {
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  width: 80px;
+  height: 80px;
+  border-top: 2px solid var(--gold);
+  border-left: 2px solid var(--gold);
+  border-radius: 2px 0 0 0;
+  opacity: 0.6;
+  z-index: 2;
+}
+
+/* Subtle border frame — bottom-right offset */
+.hero-photo-border {
+  position: absolute;
+  bottom: -12px;
+  right: -12px;
+  width: 80px;
+  height: 80px;
+  border-bottom: 2px solid var(--gold);
+  border-right: 2px solid var(--gold);
+  border-radius: 0 0 2px 0;
+  opacity: 0.3;
+  z-index: 2;
+}
+
+/* ── Hero Content ── */
+
+.hero-content-col {
+  flex: 1;
+  min-width: 0;
 }
 
 .hero-badge {
@@ -271,13 +354,13 @@ img {
 
 .hero-name-first {
   display: block;
-  font-size: clamp(3.5rem, 12vw, 8rem);
+  font-size: clamp(3.5rem, 10vw, 7rem);
   color: var(--cream);
 }
 
 .hero-name-last {
   display: block;
-  font-size: clamp(3.5rem, 12vw, 8rem);
+  font-size: clamp(3.5rem, 10vw, 7rem);
   color: var(--cream);
 }
 
@@ -285,12 +368,12 @@ img {
   width: 60px;
   height: 1px;
   background: var(--gold);
-  margin: 32px auto;
-  transform-origin: center;
+  margin: 32px 0;
+  transform-origin: left;
 }
 
 .hero-tagline {
-  font-size: clamp(0.75rem, 1.5vw, 0.95rem);
+  font-size: clamp(0.7rem, 1.3vw, 0.9rem);
   font-weight: 300;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -301,7 +384,6 @@ img {
 .hero-actions {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 16px;
   flex-wrap: wrap;
 }
@@ -357,6 +439,7 @@ img {
   bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 1;
 }
 
 .hero-scroll-line {
@@ -397,7 +480,7 @@ img {
 }
 
 /* ============================================
-   About
+   About — Photo + Text Layout
    ============================================ */
 
 .about {
@@ -416,11 +499,47 @@ img {
   background: linear-gradient(to right, transparent, var(--border), transparent);
 }
 
-.about-grid {
+.about-layout {
   display: grid;
-  grid-template-columns: 1.4fr 0.6fr;
+  grid-template-columns: 0.45fr 1fr;
   gap: 80px;
-  align-items: start;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.about-photo-container {
+  position: relative;
+}
+
+.about-photo {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 10px;
+  filter: grayscale(100%) contrast(1.1) brightness(0.95);
+  transition: filter 1s var(--ease);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+}
+
+.about-photo-container:hover .about-photo {
+  filter: grayscale(40%) contrast(1.05) brightness(1);
+}
+
+.about-photo-glow {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 40px;
+  background: radial-gradient(ellipse, rgba(201, 169, 110, 0.15) 0%, transparent 70%);
+  filter: blur(20px);
+  pointer-events: none;
+}
+
+.about-text-col {
+  min-width: 0;
 }
 
 .about-heading {
@@ -454,15 +573,15 @@ img {
 
 .about-stats {
   display: flex;
-  flex-direction: column;
   gap: 20px;
-  padding-top: 16px;
 }
 
 .stat-card {
+  flex: 1;
   padding: 28px 24px;
   border: 1px solid var(--border);
   border-radius: 6px;
+  text-align: center;
   transition: border-color 0.4s var(--ease);
 }
 
@@ -780,9 +899,13 @@ img {
   transform: scaleX(0);
 }
 
+[data-animate="fade-right"] {
+  transform: translateX(-40px);
+}
+
 [data-animate].is-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) translateX(0);
 }
 
 [data-animate="scale-x"].is-visible {
@@ -794,23 +917,35 @@ img {
    ============================================ */
 
 @media (max-width: 1024px) {
+  .hero-split {
+    gap: 48px;
+    padding: 120px 32px 80px;
+  }
+
+  .hero-photo-col {
+    width: 300px;
+  }
+
   .ventures-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .about-grid {
+  .about-layout {
     grid-template-columns: 1fr;
     gap: 48px;
   }
 
+  .about-photo-container {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
   .about-stats {
-    flex-direction: row;
     gap: 16px;
   }
 
   .stat-card {
     flex: 1;
-    text-align: center;
   }
 }
 
@@ -823,12 +958,34 @@ img {
     display: flex;
   }
 
-  .hero-content {
+  .hero-split {
+    flex-direction: column;
+    text-align: center;
     padding: 100px 20px 60px;
+    gap: 40px;
   }
 
-  .hero-badge {
-    margin-bottom: 28px;
+  .hero-photo-col {
+    width: 260px;
+    order: -1;
+  }
+
+  .hero-photo-accent {
+    top: -8px;
+    left: -8px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .hero-photo-border {
+    bottom: -8px;
+    right: -8px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .hero-rule {
+    margin: 24px auto;
   }
 
   .hero-tagline {
@@ -836,8 +993,20 @@ img {
     letter-spacing: 0.15em;
   }
 
+  .hero-actions {
+    justify-content: center;
+  }
+
   .about {
     padding: 100px 0;
+  }
+
+  .about-layout {
+    gap: 40px;
+  }
+
+  .about-photo-container {
+    max-width: 240px;
   }
 
   .about-stats {
@@ -872,6 +1041,10 @@ img {
   .hero-name-first,
   .hero-name-last {
     font-size: 3rem;
+  }
+
+  .hero-photo-col {
+    width: 220px;
   }
 
   .hero-actions {
