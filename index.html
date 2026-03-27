@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jon Hazeltine — Entrepreneur. Builder. Leader.</title>
+  <meta name="description" content="Jon Hazeltine — Entrepreneur, Real Estate Professional, Mortgage Broker, Coach, and Church Leader based in Grand Rapids, MI. Connect with Jon.">
+  <meta property="og:title" content="Jon Hazeltine — Entrepreneur. Builder. Leader.">
+  <meta property="og:description" content="Real Estate. Mortgages. Coaching. Leadership. One mission — building what matters.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Jon Hazeltine — Entrepreneur. Builder. Leader.">
+  <meta name="twitter:description" content="Real Estate. Mortgages. Coaching. Leadership. One mission — building what matters.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#030a14">
+</head>
+<body>
+
+  <!-- Floating Nav -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">JH</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#ventures">Ventures</a>
+        <a href="#connect" class="nav-cta">Connect</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="nav-mobile" id="navMobile">
+      <a href="#about">About</a>
+      <a href="#ventures">Ventures</a>
+      <a href="#connect">Connect</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <canvas class="hero-canvas" id="heroCanvas"></canvas>
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge" data-animate="fade-up">Grand Rapids, MI</div>
+      <h1 class="hero-name" data-animate="fade-up" data-delay="100">
+        <span class="hero-name-first">Jon</span>
+        <span class="hero-name-last">Hazeltine</span>
+      </h1>
+      <div class="hero-rule" data-animate="scale-x" data-delay="300"></div>
+      <p class="hero-tagline" data-animate="fade-up" data-delay="400">
+        Entrepreneur &middot; Real Estate &middot; Mortgages &middot; Coaching &middot; Leadership
+      </p>
+      <div class="hero-actions" data-animate="fade-up" data-delay="600">
+        <a href="https://calendly.com/jonhazeltine/quickconnect" target="_blank" rel="noopener" class="btn btn-primary">
+          <span>Book a Call</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+        <button class="btn btn-ghost btn-save" id="saveContact">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+          <span>Save Contact</span>
+        </button>
+      </div>
+    </div>
+    <div class="hero-scroll" data-animate="fade-up" data-delay="800">
+      <div class="hero-scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-label" data-animate="fade-up">About</div>
+      <div class="about-grid">
+        <div class="about-text" data-animate="fade-up" data-delay="100">
+          <h2 class="about-heading">Building what<br><em>matters.</em></h2>
+          <p class="about-lead">
+            I operate at the intersection of real estate, finance, coaching, and faith — driven by a single conviction:
+            the right guidance at the right time changes everything.
+          </p>
+          <p class="about-body">
+            Whether I'm closing a commercial deal, structuring a mortgage, coaching an entrepreneur
+            through a breakthrough, or leading a congregation — the through-line is the same.
+            I build relationships, I build systems, and I build futures.
+          </p>
+          <p class="about-body">
+            Based in Grand Rapids, Michigan, I bring over a decade of experience across multiple
+            industries to every conversation. My approach is simple: listen deeply, move decisively,
+            and always leave things better than I found them.
+          </p>
+        </div>
+        <div class="about-stats" data-animate="fade-up" data-delay="200">
+          <div class="stat-card">
+            <div class="stat-number">5+</div>
+            <div class="stat-label">Active Ventures</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">GR</div>
+            <div class="stat-label">Grand Rapids, MI</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">&infin;</div>
+            <div class="stat-label">Commitment</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ventures -->
+  <section class="ventures" id="ventures">
+    <div class="container">
+      <div class="section-label" data-animate="fade-up">What I Do</div>
+      <h2 class="ventures-heading" data-animate="fade-up" data-delay="100">Every venture, one vision.</h2>
+
+      <div class="ventures-grid">
+        <!-- Real Estate -->
+        <a href="https://grandrapids.realestate" target="_blank" rel="noopener" class="venture-card" data-animate="fade-up" data-delay="150">
+          <div class="venture-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3 class="venture-title">Real Estate</h3>
+          <p class="venture-desc">Residential &amp; commercial listings, purchases, leasing, investment, syndication, and REIT strategies.</p>
+          <div class="venture-services">
+            <span>Residential</span>
+            <span>Commercial</span>
+            <span>Investment</span>
+            <span>Syndication</span>
+          </div>
+          <div class="venture-link">
+            <span>grandrapids.realestate</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+          </div>
+        </a>
+
+        <!-- Mortgages -->
+        <a href="https://branches.guildmortgage.com/mi/ada/jon-hazeltine-539-umjh.html" target="_blank" rel="noopener" class="venture-card" data-animate="fade-up" data-delay="200">
+          <div class="venture-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+          </div>
+          <h3 class="venture-title">Mortgages</h3>
+          <p class="venture-desc">Financing solutions through Guild Mortgage. Competitive rates, personal service, and a process built around you.</p>
+          <div class="venture-services">
+            <span>Guild Mortgage</span>
+            <span>Ada, MI</span>
+          </div>
+          <div class="venture-meta">NMLS: 2574218</div>
+          <div class="venture-link">
+            <span>Guild Mortgage</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+          </div>
+        </a>
+
+        <!-- Coaching -->
+        <a href="https://fourthreason.com" target="_blank" rel="noopener" class="venture-card" data-animate="fade-up" data-delay="250">
+          <div class="venture-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+          </div>
+          <h3 class="venture-title">FourthReason Coaching</h3>
+          <p class="venture-desc">Executive coaching and strategic guidance for entrepreneurs and leaders ready to break through to the next level.</p>
+          <div class="venture-services">
+            <span>Executive Coaching</span>
+            <span>Strategy</span>
+          </div>
+          <div class="venture-link">
+            <span>fourthreason.com</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+          </div>
+        </a>
+
+        <!-- International Development -->
+        <a href="https://fourthreason.com/dr" target="_blank" rel="noopener" class="venture-card" data-animate="fade-up" data-delay="300">
+          <div class="venture-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+          </div>
+          <h3 class="venture-title">International Development</h3>
+          <p class="venture-desc">Real estate development and investment opportunities with a global perspective. Currently active in the Dominican Republic.</p>
+          <div class="venture-services">
+            <span>Dominican Republic</span>
+            <span>Development</span>
+          </div>
+          <div class="venture-link">
+            <span>Learn more</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+          </div>
+        </a>
+
+        <!-- Property Management -->
+        <a href="https://sweetspotdr.com" target="_blank" rel="noopener" class="venture-card" data-animate="fade-up" data-delay="350">
+          <div class="venture-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+          </div>
+          <h3 class="venture-title">Property Management</h3>
+          <p class="venture-desc">Sweet Spot DR — boutique property management services. Launching soon.</p>
+          <div class="venture-services">
+            <span>Coming Soon</span>
+          </div>
+          <div class="venture-link">
+            <span>sweetspotdr.com</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+          </div>
+        </a>
+
+        <!-- Church Leadership -->
+        <a href="https://www.thechurches.co" target="_blank" rel="noopener" class="venture-card" data-animate="fade-up" data-delay="400">
+          <div class="venture-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2Z"/><path d="m12 6v8"/><path d="m8 10h8"/></svg>
+          </div>
+          <h3 class="venture-title">Church Leadership</h3>
+          <p class="venture-desc">Servant leadership in the local church. Building communities rooted in faith, purpose, and service.</p>
+          <div class="venture-services">
+            <span>Leadership</span>
+            <span>Community</span>
+          </div>
+          <div class="venture-link">
+            <span>thechurches.co</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Connect -->
+  <section class="connect" id="connect">
+    <div class="container">
+      <div class="connect-inner">
+        <div class="section-label" data-animate="fade-up">Connect</div>
+        <h2 class="connect-heading" data-animate="fade-up" data-delay="100">Let's build<br>something together.</h2>
+        <p class="connect-sub" data-animate="fade-up" data-delay="200">Drop into my calendar for an introduction. Whether it's real estate, financing, coaching, or just a conversation — I'm here.</p>
+        <div class="connect-buttons" data-animate="fade-up" data-delay="300">
+          <a href="https://calendly.com/jonhazeltine/intro" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+            <span>Schedule an Intro</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="https://calendly.com/jonhazeltine/quickconnect" target="_blank" rel="noopener" class="btn btn-ghost btn-lg">Quick Connect</a>
+        </div>
+        <div class="connect-links" data-animate="fade-up" data-delay="400">
+          <a href="https://grandrapids.realestate" target="_blank" rel="noopener">Real Estate</a>
+          <span class="connect-dot"></span>
+          <a href="https://fourthreason.com" target="_blank" rel="noopener">Coaching</a>
+          <span class="connect-dot"></span>
+          <a href="https://www.thechurches.co" target="_blank" rel="noopener">Church</a>
+          <span class="connect-dot"></span>
+          <a href="https://branches.guildmortgage.com/mi/ada/jon-hazeltine-539-umjh.html" target="_blank" rel="noopener">Mortgages</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating Share / Bump Button -->
+  <div class="fab-container">
+    <button class="fab" id="fabShare" aria-label="Share contact">
+      <svg class="fab-icon fab-icon-share" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+      <svg class="fab-icon fab-icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="fab-menu" id="fabMenu">
+      <button class="fab-option" id="fabVcard">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+        <span>Save to Contacts</span>
+      </button>
+      <button class="fab-option" id="fabQR">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="3" height="3"/><line x1="21" y1="14" x2="21" y2="14.01"/><line x1="21" y1="21" x2="21" y2="21.01"/></svg>
+        <span>Show QR Code</span>
+      </button>
+      <button class="fab-option" id="fabLink">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        <span>Copy Link</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- QR Modal -->
+  <div class="modal-overlay" id="qrModal">
+    <div class="modal">
+      <button class="modal-close" id="qrClose">&times;</button>
+      <div class="modal-qr">
+        <canvas id="qrCanvas" width="200" height="200"></canvas>
+      </div>
+      <p class="modal-label">Scan to connect with Jon</p>
+      <p class="modal-url">jonhazeltine.com</p>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="footer-logo">Jon Hazeltine</span>
+          <span class="footer-nmls">NMLS: 2574218</span>
+        </div>
+        <div class="footer-copy">&copy; 2026 Jon Hazeltine. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
