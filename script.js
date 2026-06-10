@@ -426,6 +426,30 @@
     fabMenu.insertBefore(nativeShareBtn, fabMenu.firstChild);
   }
 
+  // ── Software Ventures card share ──
+
+  const softwareShare = document.getElementById('softwareShare');
+  if (softwareShare) {
+    softwareShare.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const shareData = {
+        title: 'Software Ventures — Jon Hazeltine',
+        text: 'Founder-built prop-tech and faith-tech from Grand Rapids — GrandRapids.RealEstate, The Church Map, The Formation App, and Compass KPI.',
+        url: 'https://www.jonhazeltine.com/software.html',
+      };
+      if (navigator.share) {
+        navigator.share(shareData).catch(() => {});
+      } else {
+        navigator.clipboard.writeText(shareData.url).then(() => {
+          showToast('Link copied to clipboard');
+        }).catch(() => {
+          showToast(shareData.url);
+        });
+      }
+    });
+  }
+
   // ── Keyboard shortcut: press 'c' to save contact ──
 
   document.addEventListener('keydown', (e) => {
