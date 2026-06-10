@@ -1204,3 +1204,304 @@ body {
   from { opacity: 0; }
   to { opacity: 1; }
 }
+
+/* ============================================
+   Software Ventures (homepage section)
+   ============================================ */
+
+.software {
+  padding: 140px 0;
+  position: relative;
+}
+
+.software::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--border), transparent);
+}
+
+.software .ventures-heading em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.software-lede {
+  max-width: 720px;
+  margin-bottom: 56px;
+}
+
+.software-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 48px;
+}
+
+.software-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* ============================================
+   Subpages (software.html / developers.html)
+   ============================================ */
+
+.subpage-hero {
+  padding: 200px 0 90px;
+  position: relative;
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 0%, rgba(201, 169, 110, 0.06) 0%, transparent 70%),
+    var(--bg-deep);
+}
+
+.subpage-title {
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  font-weight: 100;
+  line-height: 1.05;
+  color: var(--cream);
+  margin-bottom: 28px;
+}
+
+.subpage-title em {
+  font-style: italic;
+  font-weight: 200;
+  color: var(--gold);
+}
+
+.subpage-sub {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--cream-muted);
+  max-width: 720px;
+  margin-bottom: 40px;
+}
+
+.subpage-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Project blocks */
+
+.project {
+  padding: 90px 0;
+  border-top: 1px solid var(--border);
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.project-title {
+  font-size: clamp(1.7rem, 3.2vw, 2.5rem);
+  font-weight: 200;
+  line-height: 1.2;
+  color: var(--cream);
+  margin-bottom: 10px;
+}
+
+.project-alt {
+  font-size: 0.6em;
+  font-weight: 300;
+  color: var(--cream-muted);
+  white-space: nowrap;
+}
+
+.project-tagline {
+  font-size: 1.05rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--gold);
+  margin-bottom: 24px;
+}
+
+.project-text .venture-services {
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+.project-side {
+  position: sticky;
+  top: 100px;
+}
+
+.project-visit {
+  width: 100%;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+/* Fact cards */
+
+.facts-card {
+  padding: 28px 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  transition: border-color 0.4s var(--ease);
+}
+
+.facts-card:hover {
+  border-color: var(--border-hover);
+}
+
+.facts-title {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+.facts-list {
+  list-style: none;
+}
+
+.facts-list li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.78rem;
+  font-weight: 300;
+  color: var(--cream-muted);
+}
+
+.facts-list li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.facts-list strong {
+  font-weight: 400;
+  color: var(--cream);
+  text-align: right;
+}
+
+/* Feature bullets */
+
+.feature-list {
+  list-style: none;
+  margin: 8px 0 24px;
+}
+
+.feature-list li {
+  position: relative;
+  padding: 10px 0 10px 26px;
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--cream-muted);
+}
+
+.feature-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 1.15em;
+  width: 12px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.feature-list strong {
+  font-weight: 400;
+  color: var(--cream);
+}
+
+/* Spec cards (developer page) */
+
+.spec-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin: 28px 0;
+}
+
+.spec-card {
+  padding: 22px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  transition: border-color 0.4s var(--ease);
+}
+
+.spec-card:hover {
+  border-color: var(--border-hover);
+}
+
+.spec-label {
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+
+.spec-value {
+  font-size: 0.84rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--cream-muted);
+}
+
+/* Subpage responsive */
+
+@media (max-width: 1024px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .project-side {
+    position: static;
+    max-width: 480px;
+  }
+}
+
+@media (max-width: 768px) {
+  .software {
+    padding: 100px 0;
+  }
+
+  .software-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .subpage-hero {
+    padding: 150px 0 60px;
+  }
+
+  .project {
+    padding: 64px 0;
+  }
+
+  .spec-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .software-actions .btn,
+  .subpage-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
