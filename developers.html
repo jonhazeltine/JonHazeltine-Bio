@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Developer Partners — Jon Hazeltine</title>
+  <meta name="description" content="Technical overview of Jon Hazeltine's software ventures for prospective developer partners — stacks, infrastructure, data, and where each project is headed.">
+  <meta property="og:title" content="For Developer Partners — Jon Hazeltine">
+  <meta property="og:description" content="What's under the hood of each venture — stacks, infrastructure, data, and where a partner plugs in.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="For Developer Partners — Jon Hazeltine">
+  <meta name="twitter:description" content="What's under the hood of each venture — stacks, infrastructure, data, and where a partner plugs in.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <meta name="theme-color" content="#030a14">
+</head>
+<body>
+
+  <!-- Floating Nav -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">JH</a>
+      <div class="nav-links">
+        <a href="index.html#about">About</a>
+        <a href="index.html#ventures">Ventures</a>
+        <a href="software.html">Software</a>
+        <a href="developers.html">Developers</a>
+        <a href="index.html#connect" class="nav-cta">Connect</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="nav-mobile" id="navMobile">
+      <a href="index.html#about">About</a>
+      <a href="index.html#ventures">Ventures</a>
+      <a href="software.html">Software</a>
+      <a href="developers.html">Developers</a>
+      <a href="index.html#connect">Connect</a>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <header class="subpage-hero">
+    <div class="container">
+      <div class="section-label" data-animate="fade-up">For Developer Partners</div>
+      <h1 class="subpage-title" data-animate="fade-up" data-delay="100">Under the <em>hood.</em></h1>
+      <p class="subpage-sub" data-animate="fade-up" data-delay="200">
+        I'm a founder, not a career engineer. These products are built on modern TypeScript stacks
+        with heavy AI-assisted development, and I bring developers in as partners — people who want
+        real ownership of real surface area on shipped products. This page is the straight technical
+        story on each one: what it runs on, what the data looks like, and where the work is.
+      </p>
+    </div>
+  </header>
+
+  <!-- How the portfolio is built -->
+  <section class="project">
+    <div class="container">
+      <div class="section-label" data-animate="fade-up">Common Ground</div>
+      <h2 class="project-title" data-animate="fade-up" data-delay="100">How the portfolio is built</h2>
+      <p class="about-body" data-animate="fade-up" data-delay="150">
+        Four products, one philosophy. Everything is TypeScript end-to-end. Everything sits on
+        Supabase (Postgres) as the data layer — three of the four lean hard on PostGIS for
+        geospatial work. Every repo ships through pull requests with a documented architecture
+        (each has its own ARCHITECTURE.md and agent-ready conventions), and AI-assisted
+        development is standard practice here, not an experiment. You'd be joining codebases
+        that are built to be legible — to humans and to agents.
+      </p>
+      <div class="spec-grid" data-animate="fade-up" data-delay="200">
+        <div class="spec-card">
+          <div class="spec-label">Languages</div>
+          <div class="spec-value">TypeScript everywhere — strict mode, shared types, Zod validation</div>
+        </div>
+        <div class="spec-card">
+          <div class="spec-label">Data Layer</div>
+          <div class="spec-value">Supabase Postgres across all four · PostGIS on three · Drizzle ORM where it fits</div>
+        </div>
+        <div class="spec-card">
+          <div class="spec-label">Workflow</div>
+          <div class="spec-value">GitHub PRs, green-build gates, docs-first repos, AI-assisted development as the norm</div>
+        </div>
+        <div class="spec-card">
+          <div class="spec-label">Hosting</div>
+          <div class="spec-value">Vercel, Railway, and Expo EAS depending on the product</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GrandRapids.RealEstate -->
+  <section class="project" id="grandrapids-realestate">
+    <div class="container">
+      <div class="section-label" data-animate="fade-up">Project 01 · Live in Production</div>
+      <h2 class="project-title" data-animate="fade-up" data-delay="100">GrandRapids.RealEstate <span class="project-alt">(Neighborhood Atlas)</span></h2>
+      <p class="about-body" data-animate="fade-up" data-delay="150">
+        A hyperlocal real-estate knowledge graph for West Michigan: 15,000+ boundary polygons
+        (counties down to subdivisions and condos), each enriched with ~140 columns of computed
+        stats — walkability scores, drive times, school ratings, parcel-derived home values — plus
+        live MLS listings geo-matched to every boundary. The largest and most mature codebase in
+        the portfolio.
+      </p>
+      <div class="spec-grid" data-animate="fade-up" data-delay="200">
+        <div class="spec-card">
+          <div class="spec-label">Frontend</div>
+          <div class="spec-value">Next.js 16 (App Router, SSG/ISR) · React 18 · Tailwind + shadcn/ui · Mapbox GL JS · Capacitor wrappers for iOS/Android</div>
+        </div>
+        <div class="spec-card">
+          <div class="spec-label">Backend</div>
+          <div class="spec-value">Next.js API routes (~250 endpoints) · 25+ scheduled cron jobs · ~400 total routes</div>
+        </div>
+        <div class="spec-card">
+          <div class="spec-label">Database</div>
+          <div class="spec-value">Supabase Postgres + PostGIS · 15K boundaries · 690K parcels · 26K amenity POIs · school districts &amp; attendance zones</div>
+        </div>
+        <div class="spec-card">
+          <div class="spec-label">AI</div>
+          <div class="spec-value">Anthropic Claude for neighborhood narratives + automated fair-housing compliance scanning · OpenAI embeddings for semantic search</div>
+        </div>
+        <div class="spec-card">
+          <div class="spec-label">Integrations</div>
+          <div class="spec-value">MichRIC Spark RESO API (MLS sync every 5 min) · Google Maps &amp; Mapbox geocoding · Resend · Lofty CRM · Google Search Console / IndexNow</div>
+        </div>
+        <div class="spec-card">
+          <div class="spec-label">Hosting</div>
+          <div class="spec-value">Vercel (production from main) · Supabase Storage + Transforms as the image CDN</div>
+        </div>
+      </div>
+      <ul class="feature-list" data-animate="fade-up" data-delay="250">
+        <li><strong>Where a partner plugs in:</strong> growth features on a stable base, expanding the documented 15-step data-enrichment pipeline to new counties (and eventually new metros), mobile polish, and the SEO/content machinery.</li>
+        <li><strong>Worth knowing:</strong> MLS/IDX compliance and fair-housing rules are codified in the repo and enforced in the pipeline — this codebase takes regulatory guardrails seriously.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- The Church Map -->
+  <section class="project" id="the-church-map">
+    <div class="container">
+      <div class="section-label" data-animate="fade-up">Project 02 · Live in Production</div>
+      <h2 class="project-title" data-animate="fade-up" data-delay="100">The Church Map</h2>
+      <p class="about-body" data-animate="fade-up" data-delay="150">
+        A national geospatial collaboration platform: 241,000+ churches and 227,000+ Census/TIGER
+        boundaries on an interactive map, with city-scoped community platforms layered on top —
+        prayer journeys, community feeds, church profile claims, and digitally signed partnership
+        agreements. Philanthropic by design.
+      </p>
+      <div class="spec-grid" data-animate="fade-up" data-delay="200">
+        <div class="spec-card">
+          <div class="spec-label">Frontend</div>
+          <div class="spec-value">React 18 + Vite · Tailwind + shadcn/ui · Mapbox GL JS v3 · TanStack Query · TipTap rich text</div>
+        </div>
+        <div class="spec-card">
+          <div class="spec-label">Backend</div>
+          <div class="spec-value">Express (TypeScript) · ~250 route handlers · Drizzle ORM · 150+ SQL migrations</div>
+        </div>
+        <div class="spec-card">
+          <div class="spec-label">Database</div>
+          <div class="spec-value">Supabase Postgres + PostGIS · spatial functions for viewport queries, polygon search, ministry-saturation heatmaps</div>
+        </div>
+        <div class="spec-card">
+          <div class="spec-label">Data Pipelines</div>
+          <div class="spec-value">Google Places &amp; OSM church imports · Census/ACS demographics · CDC PLACES health data · Mapbox Uploads API for national tilesets</div>
+        </div>
+        <div class="spec-card">
+          <div class="spec-label">Services</div>
+          <div class="spec-value">OpenAI (journey &amp; solutions drafting) · Resend email · AWS S3 · PDF contract generation (pdf-lib + satori)</div>
+        </div>
+        <div class="spec-card">
+          <div class="spec-label">Hosting</div>
+          <div class="spec-value">Railway (auto-deploy from GitHub) · Cloudflare CDN/DNS</div>
+        </div>
+      </div>
+      <ul class="feature-list" data-animate="fade-up" data-delay="250">
+        <li><strong>Where a partner plugs in:</strong> state-by-state data backfill for the Michigan/Texas/California launch, city-platform onboarding tooling, and performance work on the national map experience.</li>
+        <li><strong>Worth knowing:</strong> recent work has been SEO build-out (state and city hub pages, JSON-LD, sitemaps) and the digital contract-signing flow — both shipped and live.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Be Formed -->
+  <section class="project" id="the-formation-app">
+    <div class="container">
+      <div class="section-label" data-animate="fade-up">Project 03 · Launching</div>
+      <h2 class="project-title" data-animate="fade-up" data-delay="100">Be Formed <span class="project-alt">(The Formation App)</span></h2>
+      <p class="about-body" data-animate="fade-up" data-delay="150">
+        A multi-tenant spiritual-formation platform — web app plus native iOS and Android via
+        Capacitor. The interesting architecture is the content model: an immutable template layer
+        (the master journey and achievement blueprints) compiles into module instances, which
+        deploy into per-community live data. One-way flow, enforced with database triggers and
+        audit logging.
+      </p>
+      <div class="spec-grid" data-animate="fade-up" data-delay="200">
+        <div class="spec-card">
+          <div class="spec-label">Frontend</div>
+          <div class="spec-value">React 18 + Vite · TypeScript strict · Tailwind + shadcn/ui · TanStack Query · ~14 routes, ~170 components</div>
+        </div>
+        <div class="spec-card">
+          <div class="spec-label">Mobile</div>
+          <div class="spec-value">Capacitor 7 → native iOS &amp; Android · Firebase Cloud Messaging push · native Google &amp; Apple Sign-In</div>
+        </div>
+        <div class="spec-card">
+          <div class="spec-label">Backend</div>
+          <div class="spec-value">Supabase end-to-end — Postgres, Auth (email/Google/Apple with account auto-linking), Realtime, Edge Functions (incl. automated Apple JWT rotation)</div>
+        </div>
+        <div class="spec-card">
+          <div class="spec-label">Payments &amp; AI</div>
+          <div class="spec-value">Stripe community subscriptions (web flow, App Store-compliant) · OpenAI for in-app assistance</div>
+        </div>
+      </div>
+      <ul class="feature-list" data-animate="fade-up" data-delay="250">
+        <li><strong>Where a partner plugs in:</strong> mobile release engineering — the launch checklist (transactional email, native OAuth clients, store review) — then post-launch feature velocity.</li>
+        <li><strong>Worth knowing:</strong> the feature set is complete and tested; this project is in the last mile between "built" and "in the stores."</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Compass KPI -->
+  <section class="project" id="compass-kpi">
+    <div class="container">
+      <div class="section-label" data-animate="fade-up">Project 04 · In Development</div>
+      <h2 class="project-title" data-animate="fade-up" data-delay="100">Compass KPI</h2>
+      <p class="about-body" data-animate="fade-up" data-delay="150">
+        A KPI-tracking and production-forecasting platform for real estate agents, teams, and
+        coaches. The core domain logic is a forecast engine with strict separation between
+        projected production, leading-indicator activity, and confirmed actuals — modeled with
+        decay and timing rules, never mixed. The earliest-stage venture, and the one with the
+        most greenfield.
+      </p>
+      <div class="spec-grid" data-animate="fade-up" data-delay="200">
+        <div class="spec-card">
+          <div class="spec-label">App</div>
+          <div class="spec-value">Expo / React Native + React 19 · TypeScript monorepo · EAS builds &amp; OTA updates · ~19 screens</div>
+        </div>
+        <div class="spec-card">
+          <div class="spec-label">Backend</div>
+          <div class="spec-value">Express (TypeScript) · Drizzle ORM · Supabase Postgres · 36+ versioned migrations · ~150 endpoints</div>
+        </div>
+        <div class="spec-card">
+          <div class="spec-label">Planned Integrations</div>
+          <div class="spec-value">Stream Chat (team messaging) · Mux (live coaching video) · Stripe subscriptions</div>
+        </div>
+        <div class="spec-card">
+          <div class="spec-label">Process</div>
+          <div class="spec-value">Spec-driven: architecture docs, written non-negotiables, sprint gates with per-sprint acceptance test suites</div>
+        </div>
+      </div>
+      <ul class="feature-list" data-animate="fade-up" data-delay="250">
+        <li><strong>Where a partner plugs in:</strong> frontend feature sprints, the messaging and live-video integration waves, and launch hardening — the roadmap through launch is written down and gated.</li>
+        <li><strong>Worth knowing:</strong> the engine math (forecasting, confidence scoring, deal attribution) already has unit-test coverage; the discipline here is unusually high for a pre-launch product.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- How I work -->
+  <section class="project">
+    <div class="container">
+      <div class="section-label" data-animate="fade-up">Working Together</div>
+      <h2 class="project-title" data-animate="fade-up" data-delay="100">What partnering looks like</h2>
+      <p class="about-body" data-animate="fade-up" data-delay="150">
+        I'm looking for developers who want ownership, not tickets. You'd take real surface area
+        on a product — a pipeline, a platform, a launch — and run it. Collaboration is async and
+        PR-based; every repo carries its own architecture docs and conventions, so you're never
+        reverse-engineering tribal knowledge. Arrangements are flexible by project: contract,
+        revenue share, or equity-style partnership on the right venture. The mission matters here
+        as much as the stack — two of these products are philanthropic, and all of them serve
+        communities I'm personally accountable to.
+      </p>
+      <div class="connect-buttons" data-animate="fade-up" data-delay="200" style="justify-content: flex-start;">
+        <a href="https://calendly.com/jonhazeltine/discovery" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+          <span>Talk With Jon</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+        <a href="software.html" class="btn btn-ghost btn-lg">Back to the Ventures</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating Share / Bump Button -->
+  <div class="fab-container">
+    <button class="fab" id="fabShare" aria-label="Share contact">
+      <svg class="fab-icon fab-icon-share" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+      <svg class="fab-icon fab-icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="fab-menu" id="fabMenu">
+      <button class="fab-option" id="fabVcard">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+        <span>Save to Contacts</span>
+      </button>
+      <button class="fab-option" id="fabQR">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="3" height="3"/><line x1="21" y1="14" x2="21" y2="14.01"/><line x1="21" y1="21" x2="21" y2="21.01"/></svg>
+        <span>Show QR Code</span>
+      </button>
+      <button class="fab-option" id="fabLink">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        <span>Copy Link</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- QR Modal -->
+  <div class="modal-overlay" id="qrModal">
+    <div class="modal">
+      <button class="modal-close" id="qrClose">&times;</button>
+      <div class="modal-qr">
+        <canvas id="qrCanvas" width="200" height="200"></canvas>
+      </div>
+      <p class="modal-label">Scan to connect with Jon</p>
+      <p class="modal-url">jonhazeltine.com</p>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="footer-logo">Jon Hazeltine</span>
+          <span class="footer-nmls">NMLS: 2574218</span>
+        </div>
+        <div class="footer-copy">&copy; 2026 Jon Hazeltine. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
