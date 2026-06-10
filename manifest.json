@@ -1,0 +1,10 @@
+{
+  "name": "Jon Hazeltine",
+  "short_name": "Jon Hazeltine",
+  "description": "Entrepreneur. Builder. Leader. Real Estate, Mortgages, Coaching, and Leadership in Grand Rapids, MI.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#030a14",
+  "theme_color": "#030a14",
+  "orientation": "portrait"
+}
