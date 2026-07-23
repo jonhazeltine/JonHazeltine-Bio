@@ -5,6 +5,15 @@
 (function () {
   'use strict';
 
+  // ── Skin FX hooks: colors come from the active skin's CSS variables ──
+  function cssVar(name, fallback) {
+    var v = getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+    return v || fallback;
+  }
+  var FX_ACCENT_RGB = cssVar('--fx-accent-rgb', '201, 169, 110');
+  var FX_QR_DARK = cssVar('--fx-qr-dark', '#050d18');
+  var FX_QR_LIGHT = cssVar('--fx-qr-light', '#ffffff');
+
   // ── Constellation Canvas (Hero Background) ──
 
   const canvas = document.getElementById('heroCanvas');
@@ -62,7 +71,7 @@
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(201, 169, 110, ${p.o})`;
+        ctx.fillStyle = `rgba(${FX_ACCENT_RGB}, ${p.o})`;
         ctx.fill();
 
         // Draw connections
@@ -73,7 +82,7 @@
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(201, 169, 110, ${0.06 * (1 - d / 120)})`;
+            ctx.strokeStyle = `rgba(${FX_ACCENT_RGB}, ${0.06 * (1 - d / 120)})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }
@@ -286,7 +295,7 @@
     const size = 200;
     const data = 'https://jonhazeltine.com';
 
-    ctx.fillStyle = '#ffffff';
+    ctx.fillStyle = FX_QR_LIGHT;
     ctx.fillRect(0, 0, size, size);
 
     // Generate a deterministic pattern from the URL
@@ -294,7 +303,7 @@
     const cellSize = size / modules;
     const pattern = generateQRPattern(data, modules);
 
-    ctx.fillStyle = '#050d18';
+    ctx.fillStyle = FX_QR_DARK;
     for (let row = 0; row < modules; row++) {
       for (let col = 0; col < modules; col++) {
         if (pattern[row][col]) {
@@ -340,15 +349,15 @@
 
   function drawFinderPattern(ctx, x, y, cell) {
     // Outer
-    ctx.fillStyle = '#050d18';
+    ctx.fillStyle = FX_QR_DARK;
     roundRect(ctx, x, y, cell * 7, cell * 7, 3);
     ctx.fill();
     // White ring
-    ctx.fillStyle = '#ffffff';
+    ctx.fillStyle = FX_QR_LIGHT;
     roundRect(ctx, x + cell, y + cell, cell * 5, cell * 5, 2);
     ctx.fill();
     // Inner
-    ctx.fillStyle = '#050d18';
+    ctx.fillStyle = FX_QR_DARK;
     roundRect(ctx, x + cell * 2, y + cell * 2, cell * 3, cell * 3, 1.5);
     ctx.fill();
   }
