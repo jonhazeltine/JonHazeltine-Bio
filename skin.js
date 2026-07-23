@@ -11,8 +11,7 @@
   var SKINS = [
     { id: 'luxe',     label: 'Luxe',     hint: 'Midnight & gold' },
     { id: 'paper',    label: 'Paper',    hint: 'Editorial print' },
-    { id: 'brutal',   label: 'Brutal',   hint: 'Loud & raw' },
-    { id: 'terminal', label: 'Terminal', hint: 'Green phosphor' }
+    { id: 'brutal',   label: 'Brutal',   hint: 'Loud & raw' }
   ];
   var DEFAULT_SKIN = 'luxe';
   var KEY = 'jh-skin';
