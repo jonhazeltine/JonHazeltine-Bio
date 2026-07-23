@@ -1707,7 +1707,6 @@ body {
 .skin-swatch-luxe { background: linear-gradient(135deg, #030a14 50%, #c9a96e 50%); }
 .skin-swatch-paper { background: linear-gradient(135deg, #f5f0e6 50%, #8b1e1e 50%); }
 .skin-swatch-brutal { background: linear-gradient(135deg, #ffffff 50%, #e8ff2a 50%); }
-.skin-swatch-terminal { background: linear-gradient(135deg, #020a02 50%, #33ff66 50%); }
 
 @media (max-width: 768px) {
   .skin-switcher { bottom: 24px; left: 20px; }
