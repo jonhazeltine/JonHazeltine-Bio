@@ -1781,3 +1781,7 @@ body {
 @media (max-width: 768px) {
   .skin-switcher { bottom: 24px; left: 20px; }
 }
+
+.skin-swatch-kapow { background: linear-gradient(135deg, #ffd900 50%, #e0244f 50%); }
+.skin-swatch-aurora { background: linear-gradient(135deg, #060b1e 50%, #5ee6c8 50%); }
+.skin-swatch-ivory { background: linear-gradient(135deg, #f6f3ec 50%, #9a7b4f 50%); }
