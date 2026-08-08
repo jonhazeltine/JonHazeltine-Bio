@@ -7,8 +7,9 @@ Software Ventures section (`software.html`) and a developer-partner page
 ## Stack
 
 - Plain static site — no framework, no build step. Hand-edited
-  `index.html` / `software.html` / `developers.html` + shared `styles.css`
-  and `script.js`. Assets (headshot, OG images) live in the repo root.
+  `index.html` / `software.html` / `developers.html` + `script.js`. Styling
+  is a swappable-skin system: `skin.js` loads one of the themes in `skins/`
+  (luxe is the original). Assets (headshot, OG images) live in the repo root.
 - `.github/workflows/mirror-plan-codework.yml` is the Mirror app's dispatch
   workflow (Claude code-work runs from Mirror plans) — don't remove it.
 
